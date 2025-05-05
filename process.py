@@ -156,13 +156,6 @@ def make_hyp3_product_timeseries():
     imgs[0].save("db_backscatter.gif", save_all=True, append_images=imgs[1:], duration=500, loop=0)
 
 
-def normalize_2d(matrix):
-    # Only this is changed to use 2-norm put 2 instead of 1
-    norm = np.linalg.norm(matrix, 2)
-    # normalized matrix
-    return matrix / norm
-
-
 def make_product_timeseries():
     burst_paths = list(PRODUCT_PATH.glob('*-BURST'))
     burst_paths.sort(key=get_burst_date)
